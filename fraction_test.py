@@ -1,6 +1,7 @@
 from fraction import Fraction
 import pytest
 
+
 def test_fraction_initialization():
     # Test valid initialization
     f = Fraction(1, 2)
@@ -23,21 +24,23 @@ def test_fraction_initialization():
     with pytest.raises(ValueError):
         Fraction(1, -2)
 
+
 def test_fraction_operations():
     f1 = Fraction(1, 2)
     f2 = Fraction(1, 3)
 
     # Test addition
-    assert f1 + f2 == (1/2) + (1/3)
+    assert f1 + f2 == (1 / 2) + (1 / 3)
 
     # Test subtraction
-    assert f1 - f2 == (1/2) - (1/3)
+    assert f1 - f2 == (1 / 2) - (1 / 3)
 
     # Test multiplication
-    assert f1 * f2 == (1/2) * (1/3)
+    assert f1 * f2 == (1 / 2) * (1 / 3)
 
     # Test division
-    assert f1 / f2 == (1/2) / (1/3)
+    assert f1 / f2 == (1 / 2) / (1 / 3)
+
 
 def test_fraction_comparisons():
     f1 = Fraction(1, 2)
@@ -56,6 +59,7 @@ def test_fraction_comparisons():
     assert f2 <= f1
     assert f1 >= f2
 
+
 def test_division_by_zero():
     f1 = Fraction(1, 2)
     f_zero = Fraction(0, 1)
@@ -63,6 +67,7 @@ def test_division_by_zero():
     # Test division by a fraction with numerator zero
     with pytest.raises(ZeroDivisionError):
         f1 / f_zero
+
 
 def test_invalid_operations():
     f1 = Fraction(1, 2)
@@ -83,6 +88,7 @@ def test_invalid_operations():
     # Test division with non-fraction
     with pytest.raises(TypeError):
         f1 / not_a_fraction
+
 
 def test_invalid_comparisons():
     f1 = Fraction(1, 2)
