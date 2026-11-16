@@ -2,7 +2,7 @@ from math import isclose
 
 
 class Temperature:
-    def __init__(self, value: float, unit: str = "C"):
+    def __init__(self, value: float, unit: str = "K"):
         """Initialize a Temperature instance and validate the input."""
         unit = unit.upper()
 
