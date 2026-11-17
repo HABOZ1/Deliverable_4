@@ -1,5 +1,5 @@
 class Fraction:
-    def __init__(self, numerator: int, denominator: int):
+    def __init__(self, numerator: int, denominator: int) -> None:
         """Initialize a Fraction instance and validate the input."""
         if not isinstance(numerator, int) or not isinstance(denominator, int):
             raise TypeError("Numerator and denominator must be integers.")
@@ -8,51 +8,51 @@ class Fraction:
             raise ValueError("Denominator must be positive.")
         self.denominator = denominator
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Return a string representation of the fraction."""
         return f"The fraction has numerator {self.numerator}, and denominator {self.denominator}. The fraction equals {self.numerator / self.denominator}"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Return a string representation of the fraction for debugging."""
         return f"Fraction(numerator={self.numerator}, denominator={self.denominator})"
 
-    def __eq__(self, other):
+    def __eq__(self, other: object) -> bool:
         """Check if two fractions are equal."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only compare Fraction objects.")
         return self.numerator * other.denominator == self.denominator * other.numerator
 
-    def __ne__(self, other):
+    def __ne__(self, other: object) -> bool:
         """Check if two fractions are not equal."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only compare Fraction objects.")
         return self.numerator * other.denominator != self.denominator * other.numerator
 
-    def __lt__(self, other):
+    def __lt__(self, other: object) -> bool:
         """Check if one fraction is less than another."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only compare Fraction objects.")
         return self.numerator * other.denominator < self.denominator * other.numerator
 
-    def __le__(self, other):
+    def __le__(self, other: object) -> bool:
         """Check if one fraction is less than or equal to another."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only compare Fraction objects.")
         return self.numerator * other.denominator <= self.denominator * other.numerator
 
-    def __gt__(self, other):
+    def __gt__(self, other: object) -> bool:
         """Check if one fraction is greater than another."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only compare Fraction objects.")
         return self.numerator * other.denominator > self.denominator * other.numerator
 
-    def __ge__(self, other):
+    def __ge__(self, other: object) -> bool:
         """Check if one fraction is greater than or equal to another."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only compare Fraction objects.")
         return self.numerator * other.denominator >= self.denominator * other.numerator
 
-    def __add__(self, other):
+    def __add__(self, other: object) -> float:
         """Add two fractions."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only add Fraction objects.")
@@ -60,7 +60,7 @@ class Fraction:
             other.numerator / other.denominator
         )
 
-    def __sub__(self, other):
+    def __sub__(self, other: object) -> float:
         """Subtract one fraction from another."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only subtract Fraction objects.")
@@ -68,7 +68,7 @@ class Fraction:
             other.numerator / other.denominator
         )
 
-    def __mul__(self, other):
+    def __mul__(self, other: object) -> float:
         """Multiply two fractions."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only multiply Fraction objects.")
@@ -76,7 +76,7 @@ class Fraction:
             other.numerator / other.denominator
         )
 
-    def __truediv__(self, other):
+    def __truediv__(self, other: object) -> float:
         """Divide one fraction by another."""
         if not isinstance(other, Fraction):
             raise TypeError("Can only divide Fraction objects.")
